@@ -1,0 +1,21 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #e0f7fa; /* A soft blue background */
+    font-family: 'Arial', sans-serif; /* A clean font */
+}
+
+canvas {
+    border: 2px solid #5818b3; /* A teal border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(228, 34, 118, 0.1); /* Subtle shadow for depth */
+    background-color: #cdd707; /* White background for contrast */
+    transition: transform 0.3s; /* Smooth transition for hover effect */
+}
+
+canvas:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
