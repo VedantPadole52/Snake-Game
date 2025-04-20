@@ -62,6 +62,9 @@ After downloading the files, open `index.html` in any web browser.
 - You can change the game settings like the snake's speed, canvas size, or food behavior by modifying the JavaScript code.
 - The appearance of the snake and food can be customized by adjusting the CSS.
 
+  ## Live Demo Link
+  https://snake-game-plum-theta.vercel.app/
+
 ## Conclusion
 This Snake Game is a fun project that uses basic HTML, CSS, and JavaScript to create a working game. It's a great way to practice programming fundamentals like handling user input, using the canvas element, and detecting collisions.
 
