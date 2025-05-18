@@ -70,4 +70,3 @@ This Snake Game is a fun project that uses basic HTML, CSS, and JavaScript to cr
 
 ---
 
-Let me know if you need further help or modifications!
