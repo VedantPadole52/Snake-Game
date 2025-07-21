@@ -4,18 +4,146 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #e0f7fa; /* A soft blue background */
-    font-family: 'Arial', sans-serif; /* A clean font */
+    background-color: #1a1a2e; /* Dark blue background */
+    font-family: 'Arial', sans-serif;
+    color: #e6e6e6;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+.game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.game-header {
+    text-align: center;
+    width: 100%;
+}
+
+h1 {
+    margin: 0 0 10px 0;
+    color: #4cc9f0;
+    text-shadow: 0 0 10px rgba(76, 201, 240, 0.5);
+}
+
+.score-display, .high-score {
+    font-size: 18px;
+    margin: 5px 0;
+    color: #f72585;
 }
 
 canvas {
-    border: 2px solid #5818b3; /* A teal border */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(228, 34, 118, 0.1); /* Subtle shadow for depth */
-    background-color: #cdd707; /* White background for contrast */
-    transition: transform 0.3s; /* Smooth transition for hover effect */
+    border: 2px solid #4361ee;
+    border-radius: 5px;
+    background-color: #0f0f1a; /* Dark background for better contrast */
+    box-shadow: 0 0 10px rgba(67, 97, 238, 0.5);
+    transition: transform 0.3s ease;
 }
 
 canvas:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.02); /* Subtle hover effect */
+}
+
+.game-controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+    background-color: #3a56d4;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.instructions {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #b5b5b5;
+}
+
+.game-message {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 30px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 20;
+    font-size: 24px;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Optimized spinning cube decoration */
+.decoration {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none; /* Prevent interaction with the cube */
+}
+
+.scene {
+    width: 100px;
+    height: 100px;
+    perspective: 600px;
+}
+
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: spin 10s infinite linear;
+    will-change: transform; /* Optimize animation performance */
+}
+
+.face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #4cc9f0;
+    opacity: 0.7;
+    border: 1px solid #f72585;
+}
+
+.front { transform: translateZ(50px); }
+.back { transform: rotateY(180deg) translateZ(50px); }
+.right { transform: rotateY(90deg) translateZ(50px); }
+.left { transform: rotateY(-90deg) translateZ(50px); }
+.top { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes spin {
+    0% { transform: rotateX(0) rotateY(0); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
 }
