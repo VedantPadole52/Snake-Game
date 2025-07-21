@@ -1,4 +1,4 @@
-# Snake-Game.
+# Snake-Game
 This is a exciting Snake Game
 Sure! Here's a README file for the Snake Game using HTML, CSS, and JavaScript without any sample code:
 
